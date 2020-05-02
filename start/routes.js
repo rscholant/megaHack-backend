@@ -12,8 +12,15 @@
 | http://adonisjs.com/docs/4.1/routing
 |
 */
+/** @type {import('@adonisjs/framework/src/Env')} */
+const Env = use('Env');
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route');
 
-Route.get('/', () => ({ greeting: 'Hello world in JSON' }));
+Route.group(() => {
+  Route.post('register', 'UserController.register');
+  Route.post('authenticate', 'AuthController.authenticate');
+  Route.post('forgot', 'UserController.forgotPassword');
+  Route.post('reset', 'UserController.resetPassword');
+}).prefix(`api/${Env.get('VERSION', 'v1')}`);

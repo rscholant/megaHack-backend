@@ -1,3 +1,6 @@
+/* eslint-disable global-require */
+/* eslint-disable no-console */
+
 'use strict';
 
 /*
