@@ -12,10 +12,11 @@ const Env = use('Env');
 const { parseISO, isBefore, subHours } = require('date-fns');
 
 class UserController {
-  async create({ request }) {
+  async create({ request, response }) {
     const data = request.only(['username', 'email', 'password', 'name', 'birth']);
-    const user = User.create(data);
-    await Mail.send(
+    const user = await User.create(data);
+    console.log(user);
+    /* await Mail.send(
       'emails.welcome',
       { username: user.username, emailContato: Env.get('MAIL_USERNAME') },
       (message) => {
@@ -24,7 +25,8 @@ class UserController {
           .from('contato@khnum.net.br')
           .subject(`Bem vindo ao ${Env.get('APP_NAME')}`);
       },
-    );
+    ); */
+    return response.status(200).json(user);
   }
 
   async forgotPassword({ request, response }) {

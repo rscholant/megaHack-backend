@@ -19,8 +19,14 @@ const Env = use('Env');
 const Route = use('Route');
 
 Route.group(() => {
-  Route.post('register', 'UserController.register');
+  Route.post('register', 'UserController.create');
   Route.post('authenticate', 'AuthController.authenticate');
   Route.post('forgot', 'UserController.forgotPassword');
   Route.post('reset', 'UserController.resetPassword');
 }).prefix(`api/${Env.get('VERSION', 'v1')}`);
+
+Route.group(() => {
+  Route.resource('paper', 'PaperController').apiOnly();
+})
+  .prefix(`api/${Env.get('VERSION', 'v1')}`)
+  .middleware('auth');
