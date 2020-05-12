@@ -22,7 +22,6 @@ class PreferenceController {
       .with('subSector')
       .with('paper')
       .fetch();
-    console.log(preferences.rows);
     return response.json(preferences.rows);
   }
 
