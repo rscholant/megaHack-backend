@@ -28,6 +28,7 @@ Route.group(() => {
 Route.group(() => {
   Route.resource('paper', 'PaperController').apiOnly();
   Route.resource('sector', 'SectorController').apiOnly();
+  Route.resource('preferences', 'PreferenceController').apiOnly();
 })
   .prefix(`api/${Env.get('VERSION', 'v1')}`)
   .middleware('auth');

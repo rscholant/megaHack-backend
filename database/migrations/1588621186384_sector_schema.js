@@ -8,7 +8,6 @@ class SectorSchema extends Schema {
     this.create('sectors', (table) => {
       table.increments();
       table.string('name', 100).notNullable().unique();
-      table.integer('note').notNullable();
       table.timestamps();
     });
   }

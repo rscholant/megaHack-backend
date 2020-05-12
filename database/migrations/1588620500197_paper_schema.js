@@ -9,8 +9,8 @@ class PaperSchema extends Schema {
       table.increments();
       table.string('ticker', 8).notNullable().unique();
       table.string('name', 200).notNullable();
-      table.string('sector_id', 100).unsigned().references('id').inTable('sectors');
-      table.string('subsector_id', 100).unsigned().references('id').inTable('sectors');
+      table.integer('sector_id', 100).unsigned().references('id').inTable('sectors');
+      table.integer('subsector_id', 100).unsigned().references('id').inTable('sectors');
       table.timestamps();
     });
   }

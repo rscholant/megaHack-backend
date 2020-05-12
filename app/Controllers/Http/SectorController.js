@@ -18,7 +18,7 @@ class SectorController {
    * POST sectors
    */
   async store({ request }) {
-    const data = request.only(['name', 'note']);
+    const data = request.only(['name']);
     const sector = await Sector.create(data);
     return sector;
   }
@@ -38,7 +38,7 @@ class SectorController {
    * PUT or PATCH sectors/:id
    */
   async update({ params, request }) {
-    const data = request.only(['name', 'note']);
+    const data = request.only(['name']);
     const sector = await Sector.findOrFail(params.id);
     sector.merge(data);
     await sector.save();
