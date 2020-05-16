@@ -33,8 +33,8 @@ class PreferenceController {
   async store({ request, auth }) {
     const requestData = request.only(['type', 'sector_id', 'subsector_id', 'paper_id', 'note']);
     // eslint-disable-next-line camelcase
-    const user_id = auth.user.id;
-    const data = { user_id, ...requestData };
+    const userId = auth.user.id;
+    const data = { user_id: userId, ...requestData };
 
     const preference = await Preference.create(data);
     return preference;
