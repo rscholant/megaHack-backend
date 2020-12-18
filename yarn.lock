@@ -2969,9 +2969,9 @@ mongodb@^3.2.7:
     saslprep "^1.0.0"
 
 mquery@^3.2.1:
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/mquery/-/mquery-3.2.2.tgz#e1383a3951852ce23e37f619a9b350f1fb3664e7"
-  integrity sha512-XB52992COp0KP230I3qloVUbkLUxJIu328HBP2t2EsxSFtf4W1HPSOBWOXf1bqxK4Xbb66lfMJ+Bpfd9/yZE1Q==
+  version "3.2.3"
+  resolved "https://registry.yarnpkg.com/mquery/-/mquery-3.2.3.tgz#bcf54fdfe3baf57b6a22f9b62b1ad5fa18ffe96a"
+  integrity sha512-cIfbP4TyMYX+SkaQ2MntD+F2XbqaBHUYWk3j+kqdDztPWok3tgyssOZxMHMtzbV1w9DaSlvEea0Iocuro41A4g==
   dependencies:
     bluebird "3.5.1"
     debug "3.1.0"
